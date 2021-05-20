@@ -1,0 +1,66 @@
+.m-mywallet {
+  $root: &;
+
+  border-radius: 5px;
+  box-shadow: 0 6px 9.8px 0.2px $BOXSHADOW-BASIC;
+  width: 278px;
+  min-height: 260px;
+  background-color: $COLOR-WHITE;
+  padding: 12px;
+
+  .m-tablist {
+    margin-bottom: 5px;
+  }
+
+  &_cards {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &_cardwrapper {
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  &_card {
+    position: relative;
+    transition: 0.2s transform ease-in-out;
+
+    #{$root}-BNB & {
+      transform: translateX(-100%);
+    }
+
+    .a-card + .a-card {
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  &-open {
+    display: block;
+  }
+
+  &_disconnect {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+    > .a-button {
+      height: 30px;
+    }
+  }
+
+  &-fullwidth {
+    width: 100%;
+    min-height: 0;
+    background-color: transparent;
+    padding: 12px;
+    box-shadow: none;
+
+    .a-card {
+      padding: 40px 72px 42px 24px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.a-multiselect {
+  width: 100%;
+  cursor: text;
+
+  & .search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $COLOR-WHITE;
+    border: 1px solid $BORDER-TEXTFIELD-COLOR;
+    padding: 0 12px;
+    min-height: $TEXTFIELD-HEIGHT;
+    max-width: 648px;
+
+    & input {
+      width: 100%;
+      height: $TEXTFIELD-HEIGHT;
+      margin-top: 0;
+      @include u-fz(16, 25);
+
+      &::placeholder {
+        color: $COLOR-LIGHTGRAY;
+      }
+    }
+
+    & span {
+      margin: 0 8px 0 0;
+      background: $COLOR-CYAN;
+    }
+  }
+
+  .optionListContainer {
+    & .optionContainer {
+      li {
+        &:first-child {
+          background: $COLOR-CYAN;
+        }
+
+        &:hover {
+          background: $COLOR-CYAN;
+        }
+      }
+    }
+  }
+}

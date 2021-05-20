@@ -1,0 +1,347 @@
+.p-view {
+  $DIALOG-HEIGHT: 110px;
+
+  &_main {
+    height: calc(100vh - #{$HEADER-PC-MARGIN} * 2 - #{$HEADER-PC-HEIGHT} - 30px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include sp {
+      min-height: auto;
+      height: auto;
+      margin-bottom: 0;
+      padding: 16px 16px 0;
+    }
+
+    > .a-spinner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      > span {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+
+  &_control {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .a-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &_back {
+    transform: rotate(180deg);
+  }
+
+  &_fnc {
+    display: flex;
+
+    label {
+      margin-right: 12px;
+    }
+  }
+
+  &_product {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    position: relative;
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+
+  &_buydialog {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $DIALOG-COLOR;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 -5px 10px 0 $BOXSHADOW-VIEW;
+    border-radius: 10px 10px 0 0;
+    height: $DIALOG-HEIGHT;
+
+    @include sp {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      border-radius: 0;
+    }
+  }
+
+  .m-buttoncontainer {
+    margin-bottom: 10px;
+  }
+
+  &_receipt {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .a-text {
+      margin-right: 10px;
+
+      > span.a-text {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &_item {
+    flex: 1;
+    position: relative;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
+  }
+
+  &_media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+
+    @include sp {
+      height: 350px;
+      position: relative;
+      padding: 0;
+    }
+  }
+
+  &_info {
+    display: flex;
+    border-left: 1px solid $COLOR-BALEGRAY;
+    width: 370px;
+    position: relative;
+
+    @include sp {
+      flex: 1;
+      width: auto;
+      border-left: 0;
+      flex-direction: column;
+    }
+  }
+
+  $DETAIL-HEADING-HEIGHT: 70px;
+  $PADDING-LEFT: 20px;
+
+  &_detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: calc(#{$DETAIL-HEADING-HEIGHT} + 5px) 0 $DIALOG-HEIGHT $PADDING-LEFT;
+    overflow: auto;
+    @include customScrollbar();
+
+    @include sp {
+      position: initial;
+      padding: 0 0 $DIALOG-HEIGHT;
+    }
+  }
+
+  &_detailheading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $DETAIL-HEADING-HEIGHT;
+    padding: 0 $PADDING-LEFT/2 0 $PADDING-LEFT;
+    z-index: z('main');
+    border-bottom: 1px solid $COLOR-BALEGRAY;
+    background: $HEADING-COLOR;
+
+    @include sp {
+      padding: 0;
+      margin-bottom: 10px;
+      height: 100%;
+      border-bottom: none;
+      position: initial;
+      z-index: 0;
+    }
+
+    .m-heading {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &_price {
+    > .a-text {
+      margin-right: 15px;
+    }
+  }
+
+  &_lead {
+    margin-bottom: 17px;
+  }
+
+  &_tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+
+    .a-tag {
+      margin: 0 8px 6px 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &_tabs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .m-tablist {
+      margin-bottom: 10px;
+      overflow: auto;
+    }
+  }
+
+  &_tabcontent {
+    overflow: auto;
+    flex: 1;
+    padding-right: 20px;
+  }
+
+  &_tabitem {
+    padding: 14px 0;
+    border-bottom: 1px solid $COLOR-BALEGRAY;
+  }
+
+  &_modalbody {
+    padding-top: 16px;
+  }
+
+  &_balance {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 15px;
+    z-index: z('main');
+
+    &:before {
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      content: '';
+      background-color: $COLOR-PALEBLUE;
+      z-index: z('back');
+      transform: translateX(-20vw);
+    }
+  }
+
+  &_accountinfo {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    > .a-text {
+      align-self: center;
+    }
+  }
+
+  &_availablepoint {
+    padding: 15px 25px;
+    background-color: $COLOR-WHITE;
+    border-radius: 10px;
+  }
+
+  &_modaldescription {
+    margin-bottom: 5px;
+  }
+
+  &_modalform {
+    display: flex;
+    margin-bottom: 10px;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    .m-fieldrow {
+      flex: 1;
+      padding-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  &_modalreceipt {
+    flex: 1;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $COLOR-BALEGRAY;
+    @include u-fw-b;
+
+    .a-label {
+      margin-bottom: 7px;
+      display: block;
+
+      @include sp {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &_totalpay {
+    height: $TEXTFIELD-HEIGHT;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+    padding: 0 10px 0 0;
+
+    @include sp {
+      height: auto;
+    }
+  }
+
+  &_receiptdetail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: circle;
+    background-color: $RECEIPT-DETAIL-BACKGROUND-GRAY;
+    border-left: 2px solid $COLOR-BALEGRAY;
+    padding: 6px 10px 2px;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      @include sp {
+        width: 40%;
+        min-width: 150px;
+      }
+    }
+  }
+
+  &_errormessage {
+    text-align: center;
+    color: $COLOR_ERROR;
+    margin-bottom: 10px;
+  }
+}

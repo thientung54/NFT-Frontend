@@ -1,0 +1,19 @@
+.m-dropdownmenu {
+  padding: 22px;
+  background: $COLOR-WHITE;
+  border-radius: 5px;
+  box-shadow: 0 2px 9px 1px $BOXSHADOW-BASIC;
+}
+
+.m-dropdownitem {
+  cursor: pointer;
+  @include u-fz(14, 25);
+
+  &:hover {
+    color: $COLOR-BLUE;
+  }
+
+  &-active {
+    pointer-events: none;
+  }
+}

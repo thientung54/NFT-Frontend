@@ -1,0 +1,155 @@
+.p-explore {
+  &_main {
+    min-height: calc(100vh - #{$HEADER-PC-MARGIN} * 2 - #{$HEADER-PC-HEIGHT} - 30px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_productfilter {
+    padding-left: 40px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include tab {
+      padding-left: 20px;
+    }
+    @include sp {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &_products {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+
+    > .a-button {
+      width: 100%;
+    }
+
+    .infinite-scroll-component__outerdiv {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .infinite-scroll-component {
+      overflow: visible !important;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      > .a-spinner {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+
+        > span {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  }
+
+  &_errormessage {
+    color: $COLOR-ERROR;
+    text-align: center;
+    flex: 1;
+  }
+
+  &_noresult {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+
+    > .a-icon {
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  // &_rankingfilter {
+  //   display: flex;
+  //   margin-bottom: 30px;
+
+  //   .m-dropdown {
+  //     margin-right: 10px;
+
+  //     .m-dropdownmenu {
+  //       width: 103px;
+  //     }
+
+  //     &:last-child {
+  //       .m-dropdownmenu {
+  //         width: 120px;
+  //       }
+  //     }
+  //   }
+
+  //   .m-dropdownmenu {
+  //     padding: 12px 18px;
+  //   }
+
+  //   .m-heading {
+  //     margin: 0 5px 0 0;
+  //   }
+
+  //   .a-icon {
+  //     width: 12px;
+  //     height: 7px;
+  //     margin-left: 7px;
+  //   }
+  // }
+
+  // &_ranking {
+  //   @include tab {
+  //     padding: 30px 25px;
+  //   }
+
+  //   @include sp {
+  //     padding: 25px 15px;
+  //   }
+  // }
+
+  // &_leaderboard {
+  //   @include spFixedContent {
+  //     overflow: auto;
+  //   }
+  // }
+
+  // &_userlist {
+  //   display: flex;
+  //   justify-content: space-between;
+
+  //   @include tab {
+  //     min-width: 720px;
+  //   }
+
+  //   @include sp {
+  //     width: 900px;
+  //   }
+  // }
+
+  // &_col {
+  //   display: flex;
+  //   flex-direction: column;
+
+  //   &:last-child {
+  //     margin-right: 0;
+  //   }
+
+  //   .m-userrank {
+  //     margin-bottom: 10px;
+
+  //     &:last-child {
+  //       margin-bottom: 0;
+  //     }
+  //   }
+  // }
+}

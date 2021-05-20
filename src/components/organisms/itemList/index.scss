@@ -1,0 +1,36 @@
+.o-itemlist {
+  display: flex;
+  flex-wrap: wrap;
+
+  &_item {
+    $sumMarginPerRow: 45px;
+
+    width: calc(100% / 4 - (#{$sumMarginPerRow} / 4));
+    margin: 0 calc(#{$sumMarginPerRow} / 3) 15px 0;
+    display: inline-block;
+
+    @include pc {
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+
+    @include tab {
+      width: calc(100% / 3 - #{$sumMarginPerRow} / 3);
+      margin: 15px calc(#{$sumMarginPerRow} / 2) 15px 0;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    @include sp {
+      width: 100%;
+      margin: 0 0 15px;
+    }
+
+    .o-productcard {
+      width: 100%;
+    }
+  }
+}

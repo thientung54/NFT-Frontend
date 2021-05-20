@@ -1,0 +1,17 @@
+.m-modalheader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .a-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  // &-closeonly {
+  //   width: auto;
+  //   position: absolute;
+  //   right: 10px;
+  //   top: 10px;
+  // }
+}

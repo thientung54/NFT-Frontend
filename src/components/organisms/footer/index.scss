@@ -1,0 +1,11 @@
+.o-footer {
+  width: 100%;
+  text-align: center;
+  background-color: $COLOR-LIGHTBLUE;
+  color: $COLOR-WHITE;
+  bottom: 0;
+  left: 0;
+  padding: 12px 0;
+  position: absolute;
+  @include u-fz(12, 25);
+}
